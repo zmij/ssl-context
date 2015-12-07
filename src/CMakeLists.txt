@@ -9,29 +9,25 @@ set(
     tip_ssl_SRCS
     ssl_context_service.cpp
 )
-set(
-        tip_ssl_HDRS
-        ssl_context_service.hpp
-)
 
-add_library(tip-ssl SHARED ${tip_ssl_SRCS} ${tip_ssl_HDRS})
+add_library(${TIP_SSLCONTEXT_LIB} SHARED ${tip_ssl_SRCS})
 
 set_target_properties(
-    tip-ssl 
+    ${TIP_SSLCONTEXT_LIB}
     PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 0
 )
 
 target_link_libraries(
-    tip-ssl 
+    ${TIP_SSLCONTEXT_LIB} 
     ${Boost_SYSTEM_LIBRARIES}
     ${Boost_FILESYSTEM_LIBRARIES}
     ${OPENSSL_LIBRARIES}
 )
 
 install (
-    TARGETS tip-ssl
+    TARGETS ${TIP_SSLCONTEXT_LIB}
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
 )

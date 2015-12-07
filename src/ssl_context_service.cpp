@@ -5,7 +5,7 @@
  *      Author: zmij
  */
 
-#include <tip/ssl/ssl_context_service.hpp>
+#include <tip/ssl_context_service.hpp>
 #include <boost/filesystem.hpp>
 
 namespace tip {
